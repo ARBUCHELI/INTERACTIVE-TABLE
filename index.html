@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>Interactive Table</title>
+  <style type="text/css">
+  body {
+    font-family: "Apercu", "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
+
+    color: #FFF5FF;
+    padding: 0;
+    margin-top: 100px;
+    background-color: #0F1931;
+    height: auto;
+  }
+
+
+  table {
+    font-family: "Apercu", "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
+    text-align: center;
+    width: 80%;
+    margin-top: 25px;
+    border-radius: 10px;
+    border: 3px solid #FFF5FF;
+    border-collapse: separate;
+    font-size: 16pt;
+    background: #00000000;
+    color: #FFF5FF;
+    margin-bottom: 50px;
+  }
+
+
+  tbody {
+    border-top: 3px solid #FFF5FF;
+    border-bottom: 3px solid #FFF5FF;
+  }
+
+  tbody > tr {
+    border-top: 1px solid #FFF5FF;
+    border-bottom: 1px solid #FFF5FF;
+  }
+
+
+  th {
+    font-weight: normal;
+    font-size: 18pt;
+    border-bottom: 3px solid #FFF5FF;
+  }
+
+</style>
+
+<script async="" src="Interactive%20Image_files/api.js"></script></head>
+
+<body data-new-gr-c-s-check-loaded="8.895.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="8.895.0">
+  <div align="center">
+    <span style="font-size:22pt">Interactive Tree Evaluation Table</span>
+  </div>
+<div align="center">
+<table id="instruments">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Height (ft)</th>
+    <th>Location Type</th>
+    <th>Species</th>
+    <th>Single</th>
+    <th>Prettiness</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>21246</td>
+      <td>6.0</td>
+      <td>Highway</td>
+      <td>Pin Oak</td>
+      <td>0</td>
+      <td oninput="correct(this)" id="row1" contenteditable="true">three<br></td>
+    </tr>
+    <td>11239</td>
+    <td>10.0</td>
+    <td oninput="correct(this)" id="row1" contenteditable="true">High way<br></td>
+    <td>Pin Oak</td>
+    <td>0</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>11555</td>
+    <td>12.3</td>
+    <td>Highway</td>
+    <td>Honeylocust</td>
+    <td oninput="correct(this)" id="row1" contenteditable="true">no<br></td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>21149</td>
+    <td oninput="correct(this)" id="row1" contenteditable="true">.90<br></td>
+    <td>Highway</td>
+    <td>Honeylocust</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>11222</td>
+    <td oninput="correct(this)" id="row1" contenteditable="true">nan<br></td>
+    <td>Highway</td>
+    <td>Pin Oak</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+
+  <!-- </tbody><tfoot>
+  <tr>
+    <td style="border-top: 3px solid #FFF5FF; font-weight: bold">Total</td>
+    <td style="border-top: 3px solid #FFF5FF; font-weight: bold">1000</td>
+    <td style="border-top: 3px solid #FFF5FF; font-weight: bold">1.00</td>
+    <td style="border-top: 3px solid #FFF5FF; font-weight: bold">100%</td>
+  </tr>
+  </tfoot> -->
+
+</table>
+</div>
+
+
+<script>
+  function correct(entry) {
+    let instr_name = ['21246','11239','11555','21149','11222']
+    let answer = [3,'Highway',0,9.0,8.0]
+    let emoji = ["🌳 Correct!", "🌳 Correct!","🌳 Correct!","🌳 Probably correct!", "🌳 Best guess!"]
+    var input_val = entry.textContent;
+    var row_id = entry.parentElement.rowIndex
+    var row_container = entry.parentElement;
+    if (input_val == answer[row_id-1]) {
+      row_container.style.backgroundColor = "#BBE65A";
+      row_container.style.color = "black";
+      row_container.children[0].textContent = emoji[row_id-1];
+    } else {
+      row_container.style.backgroundColor = "#00000000";
+      row_container.style.color = "#FFF5FF";
+      row_container.children[0].textContent = instr_name[row_id-1];
+    }
+  }
+</script>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e5d21fb398032f4',m:'8qLd9YUVuSbuVdbsnUfI88lXDGx.SLtYPOIbBTcsi1I-1646255569-0-AeUVyoIWWSOmZTb5L20OQ3VVQoi0FhBea8DfppnM//HKQXJPWyFaqE3kI4qBLeuiZYQTUkhbbjrZdFB9ylJxOH0rludcxPcGpifGmH/u7RFhgqm0ndszmlLguZC5BP6/Pr1wAQ8m8r01Ofc9CFtVFQwFRtD1cQ9rsjGPeaVwvO9IXMJmNy2LYg9LRpt80T0j1A==',s:[0x23612cb58d,0x2fe26469a1],}})();</script>
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
